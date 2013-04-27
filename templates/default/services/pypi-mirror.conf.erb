@@ -1,0 +1,11 @@
+#!upstart
+description "Update pypi mirror"
+
+respawn
+
+setuid <%= node.pypi_mirror.user %>
+
+env USER=<%= node.pypi_mirror.user %>
+env HOME=/home/<%= node.pypi_mirror.user %>
+
+exec pep381run <%= node.pypi_mirror.data_dir %>

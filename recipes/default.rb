@@ -20,3 +20,5 @@ service "pypi-mirror" do
   provider Chef::Provider::Service::Upstart
   action :start
 end
+
+log "Started mirroring pypi; tail /var/log/upstart/pypi-mirror.log to monitor."

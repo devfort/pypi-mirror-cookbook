@@ -1,6 +1,10 @@
 #!upstart
 description "Update pypi mirror"
 
+start on started pypi-mirror-shim
+stop on stopping pypi-mirror-shim
+
+task
 respawn
 
 setuid <%= node.pypi_mirror.user %>
@@ -8,4 +12,4 @@ setuid <%= node.pypi_mirror.user %>
 env USER=<%= node.pypi_mirror.user %>
 env HOME=/home/<%= node.pypi_mirror.user %>
 
-exec pep381run <%= node.pypi_mirror.data_dir %>
+exec bandersnatch mirror

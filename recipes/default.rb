@@ -1,3 +1,5 @@
+# TODO: Make pypi mirror searchable.
+
 include_recipe "python::pip"
 
 python_pip "bandersnatch" do

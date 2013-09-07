@@ -28,4 +28,12 @@ service "pypi-mirror-shim" do
   action :restart
 end
 
+# Serve the gems (when they finish mirroring)
+web_app "pypi_mirror" do
+  docroot node.pypi_mirror.data_dir
+  hostname node.pypi_mirror.apache.listen_hostname
+  port node.pypi_mirror.apache.listen_port
+end
+
+
 log "Started mirroring pypi; tail /var/log/upstart/pypi-mirror.log to monitor."

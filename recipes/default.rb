@@ -30,7 +30,7 @@ end
 
 # Serve the gems (when they finish mirroring)
 web_app "pypi_mirror" do
-  docroot node.pypi_mirror.data_dir
+  docroot "#{node.pypi_mirror.data_dir}/web"
   hostname node.pypi_mirror.apache.listen_hostname
   port node.pypi_mirror.apache.listen_port
 end

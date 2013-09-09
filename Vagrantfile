@@ -4,6 +4,8 @@
 Vagrant.configure("2") do |config|
   config.vm.hostname = "pypi-mirror-berkshelf"
   config.vm.box = "devfort-ubuntu-13.04-provisionerless-120gb"
+  config.vm.box_url = "http://devfort.s3.amazonaws.com/boxes/devfort-ubuntu-13.04-provisionerless-120gb-virtualbox.box"
+
   config.vm.network :forwarded_port, guest: 80, host: 8080
 
   config.omnibus.chef_version = :latest

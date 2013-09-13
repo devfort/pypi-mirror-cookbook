@@ -1,4 +1,4 @@
-default['pypi_mirror']['data_dir'] = 'fort'
+default['pypi_mirror']['user'] = 'fort'
 default['pypi_mirror']['data_dir'] = '/data/pypi'
 
 default['pypi_mirror']['apache']['listen_hostname'] = '*'

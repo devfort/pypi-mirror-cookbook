@@ -4,7 +4,7 @@ directory = <%= node.pypi_mirror.data_dir %>
 
 ; The PyPI server which will be mirrored.
 ; master = https://testpypi.python.org
-master = https://pypi.python.org
+master = <%= node.pypi_mirror.remote_pypi %>
 
 ; The network socket timeout to use for all connections. This is set to a
 ; somewhat aggressively low value: rather fail quickly temporarily and re-run
